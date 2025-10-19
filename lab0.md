@@ -14,16 +14,18 @@ OCaml сочетает строгую систему типов и функци�
 - Документацию и статьи, ресурсы ocaml.org и сообщества discuss.ocaml.org.
 
 ### Выбор книги
+
 - [OCaml from the Very Beginning. — Whitington, J. - 2013](https://johnwhitington.net/ocamlfromtheverybeginning/mlbook.pdf)
 
 ### Статьи и материалы
+
 - [Введение в OCaml: The Basics](https://habr.com/ru/articles/108529)
 - [Getting started - ocaml.org](https://ocaml.org/docs/installing-ocaml)
 - [OCaml — Традиция](https://traditio.wiki/OCaml)
 - [«Система сборки Dune | ocamlportal»](https://ocamlportal.ru/tools/dune.html)
 
-
 ## Соображения по лабораторной работе №4
+
 <!--updated, not reviewed-->
 
 Один из возможных вариантов задания для лабораторной работы — разработка библиотеки для тестирования пайплайнов машинного обучения.
