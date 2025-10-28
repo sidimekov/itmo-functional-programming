@@ -1,0 +1,9 @@
+(library
+ (name lab1)
+ (modules Distinct_powers Even_fib_sum)
+ (libraries zarith))
+
+(test
+ (name tests)
+ (modules tests)
+ (libraries lab1 alcotest zarith))
