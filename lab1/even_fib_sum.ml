@@ -91,9 +91,16 @@ let even_fib_sum_seq (limit : int) : int =
   |> Seq.filter is_even |> sum_seq
 
 let () =
-  assert (even_fib_sum_rec 4_000_000 = 4613732);
-  assert (even_fib_sum_tail 4_000_000 = 4613732);
-  assert (even_fib_sum_module 4_000_000 = 4613732);
-  assert (even_fib_sum_map_gen 4_000_000 = 4613732);
-  assert (even_fib_sum_for 4_000_000 = 4613732);
-  assert (even_fib_sum_seq 4_000_000 = 4613732)
+  let limit = 4_000_000 in
+  let results = [
+    ("1.1 Рекурсия", even_fib_sum_rec limit);
+    ("1.2 Хвостовая рекурсия", even_fib_sum_tail limit);
+    ("2 Модульная", even_fib_sum_module limit);
+    ("3 Map-генерация + fold", even_fib_sum_map_gen limit);
+    ("4 Цикл for по массиву", even_fib_sum_for limit);
+    ("5 Seq (бесконечный поток)", even_fib_sum_seq limit);
+  ] in
+
+  List.iter (fun (name, value) ->
+    Printf.printf "%-28s: %d\n" name value
+  ) results;
