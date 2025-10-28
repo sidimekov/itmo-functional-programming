@@ -1,7 +1,7 @@
 open Alcotest
 
 let test_even_fib () =
-  let open Even_fib_sum in
+  let open Lab1.Even_fib_sum in
   let limit = 4_000_000 in
   let exp = 4_613_732 in
   check int "rec" exp (even_fib_sum_rec limit);
@@ -12,7 +12,7 @@ let test_even_fib () =
   check int "seq" exp (even_fib_sum_seq limit)
 
 let test_distinct_powers () =
-  let open Distinct_powers in
+  let open Lab1.Distinct_powers in
   let amin, amax, bmin, bmax = (2, 100, 2, 100) in
   let exp = 9183 in
   check int "rec" exp (distinct_rec amin amax bmin bmax);
