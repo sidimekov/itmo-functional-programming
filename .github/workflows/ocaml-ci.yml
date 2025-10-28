@@ -19,11 +19,13 @@ jobs:
           ocaml-compiler: 5.2.x
           dune-cache: true
 
-      - name: Opam deps (with test)
+      - name: Install system deps
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev
+
+      - name: Install opam deps
         run: |
-          opam pin add -n . || true
           opam update
-          opam install . --deps-only --with-test -y
+          opam install -y dune alcotest zarith
 
       - name: Build
         run: opam exec -- dune build
