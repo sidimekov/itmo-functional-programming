@@ -1,5 +1,3 @@
-open Z
-
 let powZ (a : int) (b : int) : Z.t = Z.pow (Z.of_int a) b
 
 (* 1.1 Нехвостовая рекурсия*)
@@ -7,7 +5,9 @@ let distinct_rec amin amax bmin bmax : int =
   let rec for_a a =
     if a > amax then []
     else
-      let rec for_b b = if b > bmax then [] else powZ a b :: for_b (b + 1) in
+      let rec for_b b = if b > bmax then [] else 
+        let tail = for_b (b + 1) in
+        (powZ a b) :: tail in
       let row = for_b bmin in
       row @ for_a (a + 1)
   in
@@ -100,7 +100,7 @@ let () =
       ("1.2 Хвостовая рекурсия", distinct_tail amin amax bmin bmax);
       ("2 Модульная", distinct_modular amin amax bmin bmax);
       ("3 Map-генерация + fold", distinct_map amin amax bmin bmax);
-      ("4 Цикл for по массиву", distinct_for amin amax bmin bmax);
+      ("4 Цикл for", distinct_for amin amax bmin bmax);
       ("5 Seq (бесконечный поток)", distinct_seq amin amax bmin bmax);
     ]
   in
