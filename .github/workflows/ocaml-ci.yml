@@ -25,10 +25,13 @@ jobs:
       - name: Install opam deps
         run: |
           opam update
-          opam install -y dune alcotest zarith
+          opam install -y dune alcotest zarith ocamlformat
 
       - name: Build
         run: opam exec -- dune build
+
+      - name: Lint: ocamlformat check
+        run: opam exec -- dune fmt --check
 
       - name: Run tests
         run: opam exec -- dune runtest --no-buffer -j1
