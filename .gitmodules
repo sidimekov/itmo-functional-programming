@@ -1,3 +1,6 @@
 [submodule "itmo-fp-lab2"]
 	path = itmo-fp-lab2
 	url = git@github.com:sidimekov/itmo-fp-lab2.git
+[submodule "itmo-fp-lab3"]
+	path = itmo-fp-lab3
+	url = git@github.com:sidimekov/itmo-fp-lab3.git
