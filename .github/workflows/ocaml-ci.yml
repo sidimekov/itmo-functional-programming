@@ -17,15 +17,17 @@ jobs:
         uses: ocaml/setup-ocaml@v3
         with:
           ocaml-compiler: 5.2.x
-          dune-cache: true
+          dune-cache: false
 
       - name: Install system deps
-        run: sudo apt-get update && sudo apt-get install -y libgmp-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgmp-dev dune
 
       - name: Install opam deps
         run: |
           opam update
-          opam install -y dune alcotest zarith ocamlformat
+          opam install -y alcotest zarith ocamlformat
 
       - name: Build
         run: opam exec -- dune build
