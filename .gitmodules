@@ -4,3 +4,6 @@
 [submodule "itmo-fp-lab3"]
 	path = itmo-fp-lab3
 	url = git@github.com:sidimekov/itmo-fp-lab3.git
+[submodule "itmo-fp-lab4"]
+	path = itmo-fp-lab4
+	url = git@github.com:sidimekov/ml-inference-logger.git
